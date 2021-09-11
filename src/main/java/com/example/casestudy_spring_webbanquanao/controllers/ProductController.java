@@ -38,6 +38,7 @@ public class ProductController {
 	public String addProductPost(@ModelAttribute("product") Product product, HttpServletRequest request) {
 		Product newProduct = new ProductBuilder()
 				.withTitle(product.getTitle())
+				.productDescription(product.getDescription())
 				.stockAvailable(product.getStock())
 				.withPrice(product.getPrice())
 				.imageLink(product.getPicture())
@@ -85,6 +86,7 @@ public class ProductController {
 	public String editProductPost(@ModelAttribute("product") Product product, HttpServletRequest request) {
 		Product newProduct = new ProductBuilder()
 				.withTitle(product.getTitle())
+				.productDescription(product.getDescription())
 				.stockAvailable(product.getStock())
 				.withPrice(product.getPrice())
 				.imageLink(product.getPicture())

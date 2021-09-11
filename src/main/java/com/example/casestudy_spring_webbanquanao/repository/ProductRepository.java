@@ -19,7 +19,13 @@ public interface ProductRepository extends JpaRepository<Product, Long>, JpaSpec
 		
 	@EntityGraph(attributePaths = { "sizes", "categories", "brands" })
 	Optional<Product> findById(Long id);
-	
+
+	@Query("select DISTINCT b.name from Brand b join b.product p where p.id = ?1")
+	List<String> findBrandsByID(Long id);
+
+	@Query("select DISTINCT c.name from Category c join c.product p where p.id = ?1")
+	List<String> findCategoryByID(Long id);
+
 	@Query("SELECT DISTINCT s.value FROM Size s")
 	List<String> findAllSizes();
 	

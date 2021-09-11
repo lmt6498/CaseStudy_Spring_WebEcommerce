@@ -21,7 +21,11 @@ public interface ProductService {
 	Product saveProduct(Product product);
 
 	void deleteProductById(Long id);
-	
+
+	List<String> getBrandByID(Long id);
+
+	List<String> getCategoryByID(Long id);
+
 	List<String> getAllSizes();
 
 	List<String> getAllCategories();

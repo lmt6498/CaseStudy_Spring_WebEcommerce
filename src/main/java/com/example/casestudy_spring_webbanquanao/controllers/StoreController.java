@@ -14,6 +14,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.List;
 
 
 @Controller
@@ -44,6 +45,8 @@ public class StoreController {
 	public String productDetail(@PathParam("id") Long id, Model model) {
 		Product product = productService.findProductById(id);
 		model.addAttribute("product", product);
+		model.addAttribute("brand", productService.getBrandByID(id));
+		model.addAttribute("cate", productService.getCategoryByID(id));
 		model.addAttribute("notEnoughStock", model.asMap().get("notEnoughStock"));
 		model.addAttribute("addProductSuccess", model.asMap().get("addProductSuccess"));
 		return "productDetail";

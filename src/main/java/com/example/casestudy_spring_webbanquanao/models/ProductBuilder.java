@@ -7,7 +7,8 @@ import java.util.Set;
 public class ProductBuilder {
 		
 	private String title;
-	private int stock;	
+	private String description;
+	private int stock;
 	private double price;
 	private String picture;
 	private List<String> sizes;
@@ -19,6 +20,10 @@ public class ProductBuilder {
 	
 	public ProductBuilder withTitle(String title) {
 		this.title = title;
+		return this;
+	}
+	public ProductBuilder productDescription(String description) {
+		this.description = description;
 		return this;
 	}
 	
@@ -55,6 +60,7 @@ public class ProductBuilder {
 	public Product build() {
 		Product product = new Product();
 		product.setTitle(this.title);
+		product.setDescription(this.description);
 		product.setPrice(this.price);
 		product.setStock(this.stock);
 		product.setPicture(this.picture);

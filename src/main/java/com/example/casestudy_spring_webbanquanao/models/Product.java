@@ -16,7 +16,17 @@ public class Product {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
 	private String title;
-	private int stock;	
+	private String description;
+	private int stock;
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
 	private double price;
 	private String picture;
 	

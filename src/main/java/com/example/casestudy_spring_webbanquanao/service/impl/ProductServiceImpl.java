@@ -64,7 +64,17 @@ public class ProductServiceImpl implements ProductService {
 		productRepository.deleteById(id);
 	}
 
-	
+	@Override
+	public List<String> getBrandByID(Long id) {
+		return productRepository.findBrandsByID(id);
+	}
+
+	@Override
+	public List<String> getCategoryByID(Long id) {
+		return productRepository.findCategoryByID(id);
+	}
+
+
 	@Override
 	@Cacheable("sizes")
 	public List<String> getAllSizes() {
