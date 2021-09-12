@@ -55,7 +55,7 @@
             <a class="nav-link" sec:authorize="isAnonymous()" th:href="@{/login}">Login </a>
           </li>
           <li class="nav-item">           
-            <a class="nav-link" sec:authorize="isAuthenticated()" th:href="@{/my-profile}">My Account</a>
+             <a class="nav-link" sec:authorize="isAuthenticated()" th:href="@{/my-profile}">Hello <span sec:authentication="principal.username"></span></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" sec:authorize="isAuthenticated()" th:href="@{/logout}"> Log Out </a>
